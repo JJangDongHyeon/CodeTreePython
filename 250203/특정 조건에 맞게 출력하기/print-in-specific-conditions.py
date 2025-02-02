@@ -1,10 +1,15 @@
 arr = list(map(int, input().split()))
-
+new_arr = []
 for i in range(len(arr)):
     if arr[i] == 0:
-        for j in range(i):
-            if arr[j] % 2 != 0:
-                print(arr[j] + 3, end = ' ')
-            else:
-                print(arr[j] // 2 , end = ' ')
+        new_arr = [elem for elem in arr[:i]]
+        break
+
+for j in range(len(new_arr)):
+    if new_arr[j] % 2 != 0:
+        print(new_arr[j] + 3, end = ' ')
+    else:
+        print(new_arr[j] // 2 , end = ' ')    
+
+            
       
